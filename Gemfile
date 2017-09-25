@@ -14,6 +14,7 @@ gem 'faker',        '1.7.3'
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0' 
 gem 'bootstrap-sass', '3.3.7'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

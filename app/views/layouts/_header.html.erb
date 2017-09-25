@@ -9,13 +9,18 @@
           <i class="fa fa-home">Home</i>
           <% end %>
         </li>
-        <li><%= link_to do %>
+        <li><%= link_to event_path do %>
           <i class="fa fa-indent">Events</i>
           <% end %>
         </li>
         <li>
           <%= link_to signup_path do %>
-          <i class="fa fa-sign-in">Sign up</i>
+          <i class="fa fa-circle-o-notch">Sign up</i>
+          <% end %>
+          </li>
+          <li>
+          <%= link_to login_path do %>
+          <i class="fa fa-sign-in">Login</i>
           <% end %>
           </li>
       </ul>

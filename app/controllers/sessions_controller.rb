@@ -14,6 +14,12 @@ class SessionsController < ApplicationController
 			flash.now[:danger] = "Oh shnap Invalid email/password combination"
 			render 'new'
 		end 	
-	end 
+	end
+
+	def destroy
+		log_out if logged_in?
+		flash[:success] = "Oh Shnap you just logged out"
+		redirect_to root_url 
+	end  
 
 end

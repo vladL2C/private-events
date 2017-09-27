@@ -7,6 +7,6 @@ class Event < ApplicationRecord
 
 	default_scope -> { order(created_at: :desc) }
 
-	scope :past, ->{ where("created_at < ?",Time.zone.now) }
-	scope :upcoming, ->{ where("created_at > ?", Time.zone.now) }
+	scope :past, -> event_date { where("created_at < ?",Time.zone.now) }
+	scope :upcoming, -> event_date { where("created_at > ?", Time.zone.now) }
 end

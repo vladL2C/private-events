@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<nav aria-label="...">
+  <ul class="pager">
+    <li class="previous"><%= link_to events_path(:past => true) do %> 
+      <span aria-hidden="true">&larr;</span> 
+      Past Events
+      <% end %>
+    </li>
+        <li class="next"><%= link_to events_path(:upcoming => true) do %> 
+      
+      Upcoming Events
+      <span aria-hidden="true">&rarr;</span> 
+      <% end %>
+    </li>
+  </ul>
+</nav>
+    <h1> Events </h1>
+    <% @events.each do |e| %>
+<div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= e.title %></h4>
+      </div>
+      <div class="modal-body">
+        <p><%= e.body %></p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Join Event</button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

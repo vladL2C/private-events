@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
-	before_action :logged_in_user
+	before_action :logged_in_user, only: [:new, :index]
+
+	has_scope :past
+	has_scope :upcoming
 
 	def index
-
+		@events = apply_scopes(Event).all
 	end 
 
 	def new

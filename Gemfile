@@ -15,6 +15,7 @@ gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0' 
 gem 'bootstrap-sass', '3.3.7'
 gem "font-awesome-rails"
+gem 'has_scope'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

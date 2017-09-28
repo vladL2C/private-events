@@ -12,7 +12,11 @@ class UsersController < ApplicationController
 		else 
 			render 'new'
 		end 
-	end 
+	end
+
+	def my_events
+
+	end  
 
 	private
 	def user_params

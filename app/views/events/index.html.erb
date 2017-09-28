@@ -16,18 +16,19 @@
   </ul>
 </nav>
     <h1> Events </h1>
-    <% @events.each do |e| %>
+    <% @events.each do |event| %>
 <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title"><%= e.title %></h4>
+        <h4 class="modal-title"><%= event.title %></h4>
       </div>
       <div class="modal-body">
-        <p><%= e.body %></p>
+        <p><%= event.body %></p>
       </div>
-      
+      <a href="events/<%= event.id%>">
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Join Event</button>
       </div>
+    </a>
     </div>
     <% end %>
   </div>

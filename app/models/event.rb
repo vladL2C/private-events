@@ -5,8 +5,12 @@ class Event < ApplicationRecord
 	has_many :attendances
 	has_many :users, through: :attendances
 
+
 	default_scope -> { order(created_at: :desc) }
 
-	scope :past, -> created_at { where("created_at < ?",Time.zone.now) }
-	scope :upcoming, -> created_at { where("created_at > ?", Time.zone.now) }
+	scope :past, -> event_date { where("event_date < ?",Time.zone.now) }
+	scope :upcoming, -> event_date { where("event_date > ?", Time.zone.now) }
+
+
+
 end

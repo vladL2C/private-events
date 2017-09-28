@@ -16,8 +16,9 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass', '3.3.7'
 gem "font-awesome-rails"
 gem 'has_scope'
-gem 'bootstrap-datepicker-rails'
-gem 'jquery-timepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

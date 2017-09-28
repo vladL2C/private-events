@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
 	before_action :logged_in_user, only: [:new, :index]
-
 	has_scope :past
 	has_scope :upcoming
 
@@ -22,9 +21,15 @@ class EventsController < ApplicationController
 		end 	
 	end 
 
+	def show
+		@event = Event.find(params[:id])
+		@attends = @event.attendances 
+	end
+
+
 	private
 
 	def event_params
-		params.require(:event).permit(:title, :body)
+		params.require(:event).permit(:title, :body, :event_date)
 	end 
 end

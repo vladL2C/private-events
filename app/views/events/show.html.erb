@@ -1,0 +1,36 @@
+
+
+<div class="row">
+  <div class="col-md-8"><div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title"><%= @event.title %></h1>
+      </div>
+      <div class="modal-body">
+        <p><%= @event.body %></p>
+      </div>
+      <div class="modal-footer">
+        <%= form_for(current_user.attendances.build, url: join_path) do |f| %>
+          <%= f.hidden_field :event_id, value: @event.id %>
+          <%= f.submit "Attend", class: "btn btn-primary btn-lg btn-block" %>
+        <% end %>  
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-info">
+  <div class="panel-heading">
+    <h2 class="panel-title">Attending</h2>
+  </div>
+  <div class="panel-body">
+
+  <% @attends.each do |attend| %>
+  <li><%= attend.user.name.capitalize %></li>
+  <% end %>
+  </div>
+</div>
+    
+  </div>
+</div>
+
+

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	get '/event', to: 'events#new'
 	post '/event', to: 'events#create'
 	post '/join', to: 'attendees#create'
+	delete '/leave', to: 'attendees#destroy'
 	resources :events, only: [:index, :show]
   
   

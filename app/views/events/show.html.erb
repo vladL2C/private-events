@@ -1,5 +1,4 @@
 
-
 <div class="row">
   <div class="col-md-8"><div class="modal-content">
       <div class="modal-header">
@@ -8,12 +7,19 @@
       <div class="modal-body">
         <p><%= @event.body %></p>
       </div>
+      <% if attending_event? == false %>
       <div class="modal-footer">
         <%= form_for(current_user.attendances.build, url: join_path) do |f| %>
           <%= f.hidden_field :event_id, value: @event.id %>
           <%= f.submit "Attend", class: "btn btn-primary btn-lg btn-block" %>
-        <% end %>  
-        
+        <% end %>
+        <% else %>
+        <div class="modal-footer">
+        <%= form_for(current_user.attendances.find_by(event_id: @event.id), url: leave_path, method: :delete)  do |f| %>
+          <%= f.hidden_field :event_id, value: @event.id %>
+          <%= f.submit "Leave", class: "btn btn-primary btn-lg btn-block" %>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -7,4 +7,10 @@ class AttendeesController < ApplicationController
 		redirect_back(fallback_location: events_path(@event))
 	end 
 
+	def destroy
+		current_user.attendances.find_by(params[:attendance][:event_id]).destroy
+		flash[:success] = "You have Left the event"
+		redirect_back(fallback_location: events_path(@event))
+	end
+
 end

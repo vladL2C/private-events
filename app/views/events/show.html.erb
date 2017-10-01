@@ -15,8 +15,7 @@
         <% end %>
         <% else %>
         <div class="modal-footer">
-        <%= form_for(current_user.attendances.find_by(event_id: @event.id), url: leave_path, method: :delete)  do |f| %>
-          <%= f.hidden_field :event_id, value: @event.id %>
+        <%= form_for(current_user.attendances.find_by(event_id: @event.id), url: leave_path(@event), method: :delete)  do |f| %>
           <%= f.submit "Leave", class: "btn btn-primary btn-lg btn-block" %>
         <% end %>
         <% end %>

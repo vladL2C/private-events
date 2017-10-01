@@ -5,11 +5,9 @@ Rails.application.routes.draw do
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
 	delete '/logout', to: 'sessions#destroy'
-	get '/event', to: 'events#new'
-	post '/event', to: 'events#create'
 	post '/join', to: 'attendees#create'
-	delete '/leave', to: 'attendees#destroy'
-	resources :events, only: [:index, :show]
+	delete '/leave/:id', to: 'attendees#destroy', as: :leave
+	resources :events
   
   
 end

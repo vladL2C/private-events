@@ -24,9 +24,8 @@
       <div class="modal-body">
         <p><%= event.body %></p>
       </div>
-      <a href="events/<%= event.id%>">
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Join Event</button>
+        <%= link_to "Join Event", event_path(event), class: "btn btn-primary" %>
       </div>
     </a>
     </div>

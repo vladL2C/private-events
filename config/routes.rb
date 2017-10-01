@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 	delete '/logout', to: 'sessions#destroy'
 	post '/join', to: 'attendees#create'
 	delete '/leave/:id', to: 'attendees#destroy', as: :leave
+	get '/my_events', to: 'users#my_events'
 	resources :events
   
   

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	has_scope :past 
+	has_scope :upcoming
 
 	def new
 		@user = User.new
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
 	end
 
 	def my_events
-
+		@events = apply_scopes(current_user.events)
 	end  
 
 	private

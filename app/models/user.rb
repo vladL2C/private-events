@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	attr_accessor :remember_token
-	
+	has_many :invitations, :foreign_key => "invitor_id", :class_name => "Invite"
+	has_many :received_invites, :foreign_key => "invitee_id", :class_name => "Invite"
 	has_many :attendances
 	has_many :created_events, :foreign_key => "creator_id", :class_name => "Event", dependent: :destroy
 	has_many :events, through: :attendances

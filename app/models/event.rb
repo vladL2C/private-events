@@ -4,6 +4,7 @@ class Event < ApplicationRecord
 	belongs_to :creator, :class_name => "User"
 	has_many :attendances
 	has_many :users, through: :attendances
+	has_many :invites
 
 
 	default_scope -> { order(created_at: :desc) }
